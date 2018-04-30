@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en" style="overflow: hidden;"><head>
+<!DOCTYPE html><html lang="en" style="overflow: hidden;">
+<head>
     <title>WYSIWYWiki</title>
 
     <!-- include libraries -->
@@ -9,6 +10,13 @@
     <!-- wysiwyg libraries -->
     <link href="/assets/summernote.css" rel="stylesheet">
     <script src="/assets/summernote.js"></script>
+
+    <!-- polyfill and related libs -->
+    <script src="/assets/dat-archive-web.js"></script>
+    <script src="/assets/dat-archive-idb-polyfill.js"></script>
+    <script src="/assets/base32.js"></script>
+    <script src="/assets/buffer.js"></script>
+    <script src="/assets/random-access-idb@latest.js"></script>
 
     <!-- include app assets -->
     <link href="/assets/main.css" rel="stylesheet">
@@ -30,7 +38,7 @@
       <div class="readmode active">
         <a class="btn btn-success action-publish">Publish</a>
         <a class="btn btn-primary action-edit">Edit</a>
-        <a class="btn btn-default action-fork">Fork</a>
+        <!--<a class="btn btn-default action-fork">Fork</a>-->
       </div>
       <div class="editmode">
         <a class="btn btn-primary action-save">Save</a>

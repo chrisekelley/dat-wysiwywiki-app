@@ -1,5 +1,14 @@
 var isEditing = false
-var self = new DatArchive(location)
+var locArray = location.hostname.split('.')
+var base32String = locArray[0]
+// Decode to ascii text
+var ascii = base32.decode(base32String);
+// Convert to array of bytes
+var bytes = buffer.Buffer.from(ascii, "ascii");
+
+var datUuid =  bytes.toString("hex");
+var address = "dat://" + datUuid
+var self = new DatArchive(address)
 
 $(document).ready(function () {
   // wire up handlers
@@ -15,6 +24,7 @@ $(document).ready(function () {
       $('.action-publish').on('click', onPublish)
     } else {
       $('.action-fork').addClass('btn-success')
+      console.log("Not owner: unable to edit.")
     }
   })
   updateNav()
